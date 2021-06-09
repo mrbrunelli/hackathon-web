@@ -10,6 +10,15 @@ const vehicleRouter = require("./routes/vehicles");
 
 const app = express();
 
+app.use(
+  "/styles/css",
+  express.static(path.join("node_modules/bootstrap/dist/css"))
+);
+app.use(
+  "/styles/font",
+  express.static(path.join("node_modules/bootstrap-icons"))
+);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

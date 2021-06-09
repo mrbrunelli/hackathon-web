@@ -3,7 +3,7 @@ const api = require("../services/api");
 module.exports = {
   async index(req, res) {
     const { data } = await api.get("/vehicle");
-    return res.json(data);
+    return res.render("vehicle", { data });
   },
 
   async show(req, res) {
