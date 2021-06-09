@@ -10,6 +10,7 @@ const vehicleRouter = require("./routes/vehicles");
 
 const app = express();
 
+app.use("/public", express.static(path.join("public/")));
 app.use(
   "/styles/css",
   express.static(path.join("node_modules/bootstrap/dist/css"))
@@ -23,11 +24,12 @@ app.use(
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+console.log(path.join(__dirname, "..", "public"))
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
