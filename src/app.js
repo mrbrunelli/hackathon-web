@@ -7,6 +7,7 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const vehicleRouter = require("./routes/vehicles");
+const aboutRouter = require("./routes/about");
 
 const app = express();
 
@@ -15,16 +16,10 @@ app.use(
   "/styles/css",
   express.static(path.join("node_modules/bootstrap/dist/css"))
 );
-app.use(
-  "/styles/font",
-  express.static(path.join("node_modules/bootstrap-icons"))
-);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-console.log(path.join(__dirname, "..", "public"))
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -34,6 +29,7 @@ app.use(cookieParser());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/vehicles", vehicleRouter);
+app.use("/about", aboutRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

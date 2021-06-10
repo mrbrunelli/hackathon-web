@@ -1,0 +1,60 @@
+:root {
+  --light: #fafafa;
+  --white: #fff;
+  --dark: #222;
+  --black: #000;
+  --blue: #00b7ff;
+  --primary: #25ccf7;
+  --secondary: #2f3542;
+  --tertiary: #57606f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--light);
+}
+
+main {
+  animation: fade-start 300ms ease-in-out;
+  margin-bottom: 100px;
+}
+
+@keyframes fade-start {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+img {
+  animation: fade-end 1400ms ease-in-out;
+}
+
+@keyframes fade-end {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+a {
+  color: var(--blue);
+}
+
+nav {
+  background-color: var(--secondary);
+}
