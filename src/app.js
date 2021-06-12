@@ -16,6 +16,10 @@ app.use(
   "/styles/css",
   express.static(path.join("node_modules/bootstrap/dist/css"))
 );
+app.use(
+  "/styles/icons",
+  express.static(path.join("node_modules/bootstrap-icons/font"))
+);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
