@@ -3,7 +3,7 @@ const { formatMoney, replaceStoragePath } = require("../utils");
 
 module.exports = {
   async index(req, res) {
-    const { data } = await api.get("/api");
+    const { data } = await api.get("/vehicle");
     return res.render("vehicle", { data, formatMoney, replaceStoragePath });
   },
 
