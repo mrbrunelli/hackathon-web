@@ -1,7 +1,7 @@
 const axios = require("axios").default;
 
 const api = axios.create({
-  baseURL: "https://60aae30b66f1d0001777342d.mockapi.io/api/v1",
+  baseURL: "http://localhost:8085",
 });
 
 module.exports = api;
