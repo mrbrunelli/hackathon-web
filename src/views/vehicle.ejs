@@ -45,7 +45,7 @@
               De <%= formatMoney(vehicle.price * 1.10) %>
             </p>
             <h4 class="text-dark"><%= formatMoney(vehicle.price) %></h4>
-            <a href="#" class="btn btn-warning">Ver detalhes</a>
+            <a href="/vehicle/id/<%= vehicle.id %>" class="btn btn-warning">Ver detalhes</a>
           </div>
         </div>
         <% } %>

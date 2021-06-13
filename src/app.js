@@ -9,18 +9,18 @@ const aboutRouter = require("./routes/about");
 
 const app = express();
 
-app.use("/public", express.static(path.join("public/")));
+app.use("/public", express.static(path.resolve("public/")));
 app.use(
   "/styles/css",
-  express.static(path.join("node_modules/bootstrap/dist/css"))
+  express.static(path.resolve("node_modules/bootstrap/dist/css"))
 );
 app.use(
   "/styles/icons",
-  express.static(path.join("node_modules/bootstrap-icons/font"))
+  express.static(path.resolve("node_modules/bootstrap-icons/font"))
 );
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.resolve("src/views"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
@@ -28,8 +28,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", vehicleRouter);
+app.use("/vehicle", vehicleRouter);
 app.use("/about", aboutRouter);
+app.use("*", vehicleRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
