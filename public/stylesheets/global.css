@@ -71,3 +71,9 @@ nav {
     transform: rotateY(360deg);
   }
 }
+
+.picture-label {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

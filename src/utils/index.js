@@ -11,4 +11,11 @@ module.exports = {
   randomSort: () => {
     return Math.random() - 0.5;
   },
+  verifyVehicleType: (type) => {
+    const config = {
+      new: "NOVO",
+      used: "SEMINOVO",
+    };
+    return config[type];
+  },
 };

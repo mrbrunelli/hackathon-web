@@ -1,5 +1,5 @@
 const api = require("../services/api");
-const { formatMoney, replaceStoragePath, randomSort } = require("../utils");
+const { formatMoney, replaceStoragePath, randomSort, verifyVehicleType } = require("../utils");
 
 module.exports = {
   index: async (req, res) => {
@@ -11,6 +11,7 @@ module.exports = {
         data: sortedVehicles,
         formatMoney,
         replaceStoragePath,
+        verifyVehicleType,
         title,
       });
     } catch (error) {
@@ -35,6 +36,7 @@ module.exports = {
         data,
         formatMoney,
         replaceStoragePath,
+        verifyVehicleType,
         title,
       });
     } catch (error) {
@@ -50,6 +52,7 @@ module.exports = {
         data,
         formatMoney,
         replaceStoragePath,
+        verifyVehicleType,
         title,
       });
     } catch (error) {
