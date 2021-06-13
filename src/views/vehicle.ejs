@@ -9,7 +9,7 @@
 
     <main class="container">
       <div class="d-flex justify-content-start">
-        <h1 class="display-5 mb-5">Nossos veículos</h1>
+        <h1 class="display-5 mb-5">Destaques da semana</h1>
       </div>
       <div class="vehicles-container">
         <% for(vehicle of data) { %>
@@ -29,7 +29,7 @@
           ></span>
           <img
             src="<%= replaceStoragePath(vehicle.photo) %>"
-            class="card-img-top"
+            class="card-img-top animate-fade"
             alt="Foto do veículo"
           />
           <div class="card-body">
