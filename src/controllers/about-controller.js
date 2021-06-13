@@ -1,5 +1,5 @@
 module.exports = {
-  async index(req, res) {
+  index: async (req, res) => {
     return res.render("about");
   },
 };

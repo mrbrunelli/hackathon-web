@@ -1,14 +1,59 @@
 const api = require("../services/api");
-const { formatMoney, replaceStoragePath } = require("../utils");
+const { formatMoney, replaceStoragePath, randomSort } = require("../utils");
 
 module.exports = {
-  async index(req, res) {
-    const { data } = await api.get("/vehicle");
-    return res.render("vehicle", { data, formatMoney, replaceStoragePath });
+  index: async (req, res) => {
+    try {
+      const { data } = await api.get("/vehicle");
+      const sortedVehicles = data.sort(randomSort).slice(0, 6);
+      const title = "Destaques da semana";
+      return res.render("vehicle", {
+        data: sortedVehicles,
+        formatMoney,
+        replaceStoragePath,
+        title,
+      });
+    } catch (error) {
+      return res.render("error", { error });
+    }
   },
 
-  async show(req, res) {
-    const { data } = await api.get(`/vehicle/${req.params.id}`);
-    return res.json(data);
+  show: async (req, res) => {
+    try {
+      const { data } = await api.get(`/vehicle/id/${req.params.id}`);
+      return res.json(data);
+    } catch (error) {
+      return res.render("error", { error });
+    }
+  },
+
+  findNews: async (req, res) => {
+    try {
+      const { data } = await api.get("/vehicle/new");
+      const title = "Veículos Novos";
+      return res.render("vehicle", {
+        data,
+        formatMoney,
+        replaceStoragePath,
+        title,
+      });
+    } catch (error) {
+      return res.render("error", { error });
+    }
+  },
+
+  findUseds: async (req, res) => {
+    try {
+      const { data } = await api.get("/vehicle/used");
+      const title = "Veículos Seminovos";
+      return res.render("vehicle", {
+        data,
+        formatMoney,
+        replaceStoragePath,
+        title,
+      });
+    } catch (error) {
+      return res.render("error", { error });
+    }
   },
 };
