@@ -1,5 +1,10 @@
 const api = require("../services/api");
-const { formatMoney, replaceStoragePath, randomSort, verifyVehicleType } = require("../utils");
+const {
+  formatMoney,
+  replaceStoragePath,
+  randomSort,
+  verifyVehicleType,
+} = require("../utils");
 
 module.exports = {
   index: async (req, res) => {
@@ -22,7 +27,12 @@ module.exports = {
   show: async (req, res) => {
     try {
       const { data } = await api.get(`/vehicle/id/${req.params.id}`);
-      return res.json(data);
+      return res.render("detail", {
+        vehicle: data[0],
+        formatMoney,
+        replaceStoragePath,
+        verifyVehicleType,
+      });
     } catch (error) {
       return res.render("error", { error });
     }
