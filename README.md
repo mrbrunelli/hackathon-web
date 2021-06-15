@@ -1,7 +1,14 @@
 ## Web Hackathon
 
 ### Layout
+
+##### Mockup
+![](.github/screenshot-mockup.jpg)
+
+##### Home page
 ![](.github/screenshot-home.png)
+
+##### About page
 ![](.github/screenshot-about.png)
 
 ### How to execute?
