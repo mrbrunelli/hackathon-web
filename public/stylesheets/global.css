@@ -37,7 +37,7 @@ main {
 }
 
 .animate-fade {
-  animation: fade-end 1400ms ease-in-out;
+  animation: fade-end 1000ms ease-in-out;
 }
 
 @keyframes fade-end {

@@ -1,0 +1,40 @@
+.my-gh-right {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+}
+
+.my-gh-left {
+  position: absolute;
+  top: -120px;
+  right: 0px;
+}
+
+.my-gh-top {
+  position: absolute;
+  top: -150px;
+  right: -40px;
+}
+
+.about {
+  margin-top: 150px;
+}
+
+.animate-slide {
+  animation: animate-slide 1300ms ease-in;
+}
+
+@keyframes animate-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  80% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translateY(0px);
+  }
+}
