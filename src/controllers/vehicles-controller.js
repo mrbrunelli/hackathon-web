@@ -11,7 +11,7 @@ module.exports = {
     try {
       const { data } = await api.get("/vehicle");
       const sortedVehicles = data.sort(randomSort).slice(0, 6);
-      const title = "Destaques da semana";
+      const title = "Destaques";
       return res.render("vehicle", {
         data: sortedVehicles,
         formatMoney,
