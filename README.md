@@ -1,7 +1,8 @@
 ## Web Hackathon
 
 ### Layout
-![](.github/screenshot.png)
+![](.github/screenshot-home.png)
+![](.github/screenshot-about.png)
 
 ### How to execute?
 1. Clone repo
